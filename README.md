@@ -1,6 +1,6 @@
 # Toko Buku John Doe - Backend Test
 
-Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Laravel 10 Untuk Mengikuti Test Di TimeDoor Indonesia. 
+Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Laravel 10 Untuk Mengikuti Test Di PT.TimeDoor Indonesia. 
 
 ## Fitur Utama
 
@@ -41,7 +41,6 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
 - PHP 8.1 atau lebih tinggi
 - Composer
 - MySQL 5.7+ atau 8.0+
-- Node.js (untuk Vite, opsional)
 
 ### Langkah Instalasi
 
@@ -124,7 +123,7 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
 - `rating` (tinyint 1-10, indexed)
 - `created_at`, `updated_at`
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Memory Error saat Seeding
 ```bash
@@ -149,28 +148,9 @@ php -d memory_limit=2G artisan db:seed
 - `POST /ratings` - Submit rating baru
 - `GET /api/authors/{id}/books` - Get buku by penulis (AJAX)
 
-## 🎨 UI/UX
-
-Interface dibuat sederhana dan responsif dengan:
-- CSS murni tanpa framework
-- Responsive design untuk mobile
-- Navigasi yang jelas antar halaman
-- Loading state untuk dropdown dinamis
-- Pagination yang user-friendly
-
-## ⚡ Catatan Performa
-
-1. **Indexing**: Semua kolom yang digunakan untuk join, where, dan order by sudah di-index
-2. **Query**: Menggunakan raw SQL untuk aggregation (AVG, COUNT) di level database
-3. **Memory**: Batch processing untuk mencegah memory overflow
-4. **Caching**: Tidak menggunakan cache sesuai requirement
-
-## 📧 Support
+## Support
 
 Jika ada pertanyaan atau issue, silakan buat issue di repository ini atau kontak developer.
 
 ---
-
-**Dibuat untuk:** Ujian Backend Timedoor Academy  
-**Tanggal:** Agustus 2025  
 **Framework:** Laravel 10.x
