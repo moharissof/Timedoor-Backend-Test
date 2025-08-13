@@ -1,8 +1,8 @@
 # Toko Buku John Doe - Backend Test
 
-Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Laravel 10.
+Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Laravel 10 Untuk Mengikuti Test Di TimeDoor Indonesia. 
 
-## 🎯 Fitur Utama
+## Fitur Utama
 
 1. **Daftar Buku dengan Filter**
    - Menampilkan top 10 buku dengan rata-rata rating tertinggi secara default
@@ -19,7 +19,7 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
    - Validasi relasi penulis-buku
    - Redirect ke halaman daftar buku setelah submit
 
-## 🛠️ Teknologi
+## Teknologi
 
 - **Laravel**: 10.x
 - **PHP**: 8.1+
@@ -27,14 +27,14 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
 - **Frontend**: Blade Templates dengan CSS sederhana
 - **Data**: Faker untuk generate sample data
 
-## 📊 Sample Data
+## Sample Data
 
 - 1.000 Author palsu
 - 3.000 Book Category palsu  
 - 100.000 Books palsu
 - 500.000 Ratings palsu
 
-## 🚀 Instalasi
+## Instalasi
 
 ### Persyaratan Sistem
 
@@ -47,7 +47,7 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
 
 1. **Clone Repository**
    ```bash
-   git clone https://github.com/yourusername/TimeDoor-Backend-Test.git
+   git clone https://github.com/moharissof/TimeDoor-Backend-Test.git
    cd TimeDoor-Backend-Test
    ```
 
@@ -88,7 +88,7 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
    ```bash
    php artisan db:seed
    ```
-   > ⚠️ **Perhatian**: Proses seeding akan memakan waktu beberapa menit karena akan generate 600.000+ record. Pastikan memory limit PHP mencukupi (minimal 2GB).
+   >**Perhatian**: Proses seeding akan memakan waktu beberapa menit karena akan generate 600.000+ record.
 
 8. **Jalankan Server**
    ```bash
@@ -99,7 +99,7 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
    
    Buka browser dan akses: `http://localhost:8000`
 
-## 📁 Struktur Database
+## Struktur Database
 
 ### Tabel `authors`
 - `id` (Primary Key)
@@ -124,48 +124,6 @@ Aplikasi web sederhana untuk mengelola koleksi buku dan sistem rating dengan Lar
 - `rating` (tinyint 1-10, indexed)
 - `created_at`, `updated_at`
 
-## 🔍 Optimasi Performa
-
-### Indexing Strategy
-- Index pada kolom pencarian (`title`, `name`)
-- Index pada foreign keys untuk join yang efisien
-- Composite index untuk query kombinasi
-- Index pada kolom `rating` untuk filter
-
-### Query Optimization
-- Menggunakan eager loading (`with()`) untuk mencegah N+1 problem
-- Aggregation di database level (AVG, COUNT)
-- Batch insert untuk seeding dengan chunk 5000 records
-- Left join dengan group by untuk menghitung rating
-
-### Memory Management
-- Memory limit 2GB untuk proses seeding
-- Disable query log selama seeding
-- Batch processing untuk data besar
-
-## 🧪 Testing
-
-Untuk menguji performa dengan data besar:
-
-```bash
-# Check jumlah data
-php artisan tinker
->>> \App\Models\Author::count()
->>> \App\Models\Book::count() 
->>> \App\Models\Rating::count()
-
-# Test query performance
->>> \App\Models\Book::with('author')->limit(10)->get()
-```
-
-## 📊 Performance Metrics
-
-Dengan 600K+ records:
-- Halaman daftar buku: < 1 detik
-- Top 10 penulis: < 2 detik  
-- Form input rating: < 500ms
-- Search query: < 1.5 detik
-
 ## 🐛 Troubleshooting
 
 ### Memory Error saat Seeding
@@ -179,14 +137,7 @@ php -d memory_limit=2G artisan db:seed
 - Cek kredensial di file `.env`
 - Pastikan database sudah dibuat
 
-### Slow Query Performance
-```sql
--- Check index usage
-SHOW INDEX FROM books;
-SHOW INDEX FROM ratings;
 
--- Analyze query performance  
-EXPLAIN SELECT * FROM books JOIN ratings ON books.id = ratings.book_id;
 ```
 
 ## 📝 API Endpoints
